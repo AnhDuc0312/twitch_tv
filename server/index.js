@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-import authRoutes from './src/routes/authRoutes.js'
+import authRoutes from './src/routes/authRoutes.js';
+import channelsRoutes from './src/routes/channelsRoutes.js';
+import settingRoutes from './src/routes/settingRoutes.js';
 
 // configDotenv.config();
 dotenv.config();
@@ -21,7 +23,9 @@ app.get('/', (req , res) => {
     return res.send('Hello here is your server')
 });
 
-app.use('/api/auth', authRoutes);  
+app.use('/api/auth', authRoutes); 
+app.use('/api/channels' ,channelsRoutes); 
+app.use('/api/settings',settingRoutes);
 
 const server = http.createServer(app);
 

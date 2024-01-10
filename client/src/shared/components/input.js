@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const AuthInput = ({
+export const Input = ({
     field,
     label,
     value,
@@ -27,7 +27,7 @@ export const AuthInput = ({
         type={type}
         value={value}
         onChange={handleValueChang}
-        // onBlur={handleInputBlur} 
+        onBlur={handleInputBlur} 
     />
     <span className='auth-form-validation-message'>
         {showErrorMessage && validationMessage}
